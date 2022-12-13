@@ -1,0 +1,9 @@
+.footerbar{
+    position:  fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.tab_icon{
+    height:  26px;
+}
