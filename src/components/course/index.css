@@ -1,0 +1,41 @@
+.course_list {
+  padding: 3.5rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.course {
+  width: 32rem;
+  margin-right: 3.6rem;
+}
+
+.course:nth-of-type(2n) {
+  margin-right: 0;
+}
+
+.course h3 {
+  font-size: 2.6rem;
+  margin-top: 2.2rem;
+  font-weight: bold;
+}
+
+.course p {
+  font-size: 2rem;
+  margin: 1.4rem 0 4.6rem;
+  color: #999999;
+}
+
+.poster {
+  position: relative;
+}
+
+.poster .tag {
+  position: absolute;
+  top: 1.8rem;
+  right: 1.8rem;
+}
+
+.poster img {
+  width: 32rem;
+  height: 22rem;
+}

@@ -1,16 +1,12 @@
-import { useState } from "react";
 import "./App.css";
-import { Button } from "antd-mobile";
+import "reset-css";
 import Footerbar from "./components/FooterBar";
 import { Routes, Route } from "react-router-dom";
 import Today from "./views/today";
 import Explore from "./views/explore";
 import Mine from "./views/mine";
-import "normalize.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App">
       <Routes>
