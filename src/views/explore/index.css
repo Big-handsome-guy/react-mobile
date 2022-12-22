@@ -2,3 +2,23 @@
   font-size: 6rem;
   margin: 2rem 3.6rem;
 }
+
+.adm-tabs-header {
+  border-bottom: none;
+}
+
+.adm-tabs-header .adm-tabs-tab {
+  font-size: 12px !important;
+}
+
+.adm-capsule-tabs-header {
+  border-bottom: none;
+}
+
+.my_stick {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 9;
+}

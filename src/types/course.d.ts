@@ -12,7 +12,7 @@ export interface CourseType {
 
 //分类
 export interface ClassifyType {
-  objectID: string;
+  objectId: string;
   cateName: string;
   dadId: string;
   state: boolean;

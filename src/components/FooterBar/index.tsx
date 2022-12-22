@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { TabBar } from "antd-mobile";
-import "./index.css";
+import "./index.scss";
 import explore from "../../assets/icon/tab_explore_normal.png";
 import exploreActive from "../../assets/icon/tab_explore_selected.png";
 import today from "../../assets/icon/tab_today_normal.png";
