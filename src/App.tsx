@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Today from "./views/today";
 import Explore from "./views/explore";
 import Mine from "./views/mine";
+import Detail from "./views/detail";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Today />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/mine" element={<Mine />} />
+        <Route path="/detail/:id" element={<Detail />} />
       </Routes>
       <Footerbar />
     </div>

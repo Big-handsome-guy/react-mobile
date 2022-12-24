@@ -22,3 +22,9 @@ export const courseGet = (
 export const classifyGet = () => {
   return request.get("/classes/ReactClassify");
 };
+
+//课程详情
+
+export const courseDetailGet = (objectId: string) => {
+  return request.get(`/classes/ReactArticle/${objectId}`);
+};

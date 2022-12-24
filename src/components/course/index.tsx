@@ -2,6 +2,7 @@ import React from "react";
 import { Ellipsis, Tag } from "antd-mobile";
 import "./index.scss";
 import { CourseType } from "../../types/course";
+import { Link } from "react-router-dom";
 
 type Props = {
   courseList: Array<CourseType>;
@@ -20,12 +21,17 @@ export default function ({ courseList }: Props) {
                   {item.isvip ? "VIP独享课程" : "免费"}
                 </Tag>
               </div>
-              <h3>
-                <Ellipsis direction="end" content={item.name} />
-              </h3>
-              <p>
-                <Ellipsis direction="end" rows={2} content={item.info} />
-              </p>
+              <Link
+                to={`/detail/${item.objectId}`}
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                <h3>
+                  <Ellipsis direction="end" content={item.name} />
+                </h3>
+                <p>
+                  <Ellipsis direction="end" rows={2} content={item.info} />
+                </p>
+              </Link>
             </div>
           );
         })}
