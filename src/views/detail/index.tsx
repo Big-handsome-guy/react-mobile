@@ -2,8 +2,8 @@ import { NavBar } from "antd-mobile";
 import React, { useEffect, useState } from "react";
 import "./index.scss";
 import { useParams } from "react-router-dom";
-import { courseDetailGet } from "../../api/course";
-import { CourseType } from "../../types/course";
+import { courseDetailGet } from "@/api/course";
+import { CourseType } from "@/types/course";
 
 type Props = {};
 
