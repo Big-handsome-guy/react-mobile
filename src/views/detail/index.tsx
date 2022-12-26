@@ -11,6 +11,7 @@ export default function detail({}: Props) {
   const params = useParams();
   //   console.log(params);
   const [detail, setDetail] = useState<CourseType>();
+  const [active, setActive] = useState<boolean>(true);
 
   useEffect(() => {
     courseDetailGet(params.id as string).then((res) => {
@@ -19,9 +20,18 @@ export default function detail({}: Props) {
     });
   }, []);
   const handleBack = () => {};
+  const right = (
+    <>
+      <i
+        className={`iconfont ${active ? "icon-shoucang" : "icon-jushoucang"}`}
+      ></i>
+    </>
+  );
   return (
     <div className="detail_box">
-      <NavBar onBack={handleBack}></NavBar>
+      <NavBar onBack={handleBack} right={right}>
+        课程详情
+      </NavBar>
       {detail ? (
         <>
           <img src={detail?.poster} alt="" />
