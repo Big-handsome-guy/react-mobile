@@ -12,6 +12,7 @@ export default function detail({}: Props) {
   //   console.log(params);
   const [detail, setDetail] = useState<CourseType>();
   const [active, setActive] = useState<boolean>(true);
+  const [islogin, setIslogin] = useState<boolean>(true);
 
   useEffect(() => {
     courseDetailGet(params.id as string).then((res) => {
@@ -36,7 +37,11 @@ export default function detail({}: Props) {
         <>
           <img src={detail?.poster} alt="" />
           <h2>{detail?.name}</h2>
-          <p>{detail?.info}</p>
+          {islogin ? (
+            <div dangerouslySetInnerHTML={{ __html: detail.desc }}></div>
+          ) : (
+            <p>{detail?.info}</p>
+          )}
         </>
       ) : (
         ""

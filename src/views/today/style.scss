@@ -1,0 +1,36 @@
+.today_box {
+  overflow: hidden;
+  width: 100%;
+  .header {
+    padding: 20px;
+    background-color: #d8d8d8;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    text-align: center;
+  }
+}
+.swiper {
+  width: 95%;
+  height: 320px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+.grid_item {
+  padding: 4rem 0;
+  text-align: center;
+}
