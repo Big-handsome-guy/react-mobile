@@ -1,24 +1,54 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import "./style.scss";
 import { EffectCards } from "swiper";
 import { bannerGet, BannerType } from "@/api/home";
-import { Grid } from "antd-mobile";
+import { Avatar, Grid, SearchBar } from "antd-mobile";
 import Course from "@/components/course";
 import { courseGet } from "@/api/course";
 import { CourseType } from "@/types/course";
+import BScroll from "@better-scroll/core";
+import MouseWheel from "@better-scroll/mouse-wheel";
+BScroll.use(MouseWheel);
 
 type Props = {};
+function getImageUrl(index: number) {
+  return new URL(`../../assets/icon/ic_today_${index + 1}.png`, import.meta.url)
+    .href;
+}
 
 export default function Today({}: Props) {
   const [banner, setBanner] = useState<Array<BannerType>>([]);
   const [courseList, setCourseList] = useState<Array<CourseType>>([]);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const gridData = ["专注闹钟", "呼吸训练", "睡眠助手", "解压木鱼"];
+  const [opacity, setOpacity] = useState<number>(0);
 
   useEffect(() => {
     bannerGet().then((res) => {
       setBanner(res.data.results);
+      setTimeout(() => {
+        let wrapper = wrapperRef.current as HTMLDivElement;
+        let bs = new BScroll(wrapper, {
+          probeType: 3, //控制scroll时间的时机
+          click: true, //开启点击事件
+          mouseWheel: {
+            //开启鼠标滚轮
+            speed: 20,
+            invert: false,
+            easeTime: 300,
+          },
+        });
+        bs.on("scroll", (position: any) => {
+          // console.log(position.x, position.y);
+          let y = Math.abs(position.y);
+          if (y < 285) {
+            setOpacity(y / 300);
+          }
+        });
+      }, 300);
     });
     loadMore();
   }, []);
@@ -33,31 +63,48 @@ export default function Today({}: Props) {
   };
   return (
     <div className="today_box">
-      <div className="header">Have a NiceDay!</div>
-      <Swiper
-        effect={"cards"}
-        grabCursor={true}
-        modules={[EffectCards]}
-        className="mySwiper"
-      >
-        {banner.map((item) => {
-          return (
-            <SwiperSlide>
-              <img src={item.img} alt="" />
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
-      <Grid columns={4} gap={8}>
-        {[1, 2, 3, 4].map((item) => {
-          return (
-            <Grid.Item>
-              <div className="grid_item">正念冥想{item}</div>
-            </Grid.Item>
-          );
-        })}
-      </Grid>
-      <Course courseList={courseList} />
+      <div className="header" style={{ opacity }}>
+        Have a NiceDay!
+      </div>
+      <div className="wrapper" ref={wrapperRef}>
+        <div className="content">
+          <div className="user">
+            <div>
+              <h1>加入NiceDay</h1>
+              <p>注册或登录账号</p>
+            </div>
+            <Avatar src="" />
+          </div>
+          <div className="search_box">
+            <SearchBar placeholder="冥想课程、大自然音乐、睡眠助手等" />
+          </div>
+          <Swiper
+            effect={"cards"}
+            grabCursor={true}
+            modules={[EffectCards]}
+            className="mySwiper"
+          >
+            {banner.map((item) => {
+              return (
+                <SwiperSlide>
+                  <img src={item.img} alt="" />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+          <Grid columns={4} gap={8}>
+            {gridData.map((item, index) => {
+              return (
+                <Grid.Item className="grid_item" key={index}>
+                  <img src={getImageUrl(index)} alt="" />
+                  <h3>{item}</h3>
+                </Grid.Item>
+              );
+            })}
+          </Grid>
+          <Course courseList={courseList} />
+        </div>
+      </div>
     </div>
   );
 }

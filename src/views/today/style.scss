@@ -3,13 +3,38 @@
   width: 100%;
   .header {
     padding: 20px;
-    background-color: #d8d8d8;
+    background-color: #ffffff;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 2;
     text-align: center;
+    opacity: 0;
+  }
+  .wrapper {
+    height: 100vh;
+    overflow: hidden;
+  }
+  // .content {
+  //   height: 100vh;
+  // }
+  .user {
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    h1 {
+      font-size: 3.6rem;
+      font-weight: bold;
+      color: #4b6bd0;
+    }
+    p {
+      margin-top: 2rem;
+      font-size: 2.4rem;
+    }
+  }
+  .search_box {
+    padding: 2rem;
   }
 }
 .swiper {
@@ -33,4 +58,12 @@
 .grid_item {
   padding: 4rem 0;
   text-align: center;
+  img {
+    width: 50px;
+    height: auto;
+  }
+  h3 {
+    font-size: 2.4rem;
+    margin-top: 10px;
+  }
 }

@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@better-scroll/core": "^2.5.0",
+    "@better-scroll/mouse-wheel": "^2.5.0",
     "antd-mobile": "^5.27.0",
     "axios": "^1.2.1",
     "react": "^18.2.0",
