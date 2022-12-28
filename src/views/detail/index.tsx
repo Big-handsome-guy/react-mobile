@@ -4,6 +4,7 @@ import "./index.scss";
 import { useParams } from "react-router-dom";
 import { courseDetailGet } from "@/api/course";
 import { CourseType } from "@/types/course";
+import { useUserLogin } from "@/store/user";
 
 type Props = {};
 
@@ -12,7 +13,7 @@ export default function detail({}: Props) {
   //   console.log(params);
   const [detail, setDetail] = useState<CourseType>();
   const [active, setActive] = useState<boolean>(true);
-  const [islogin, setIslogin] = useState<boolean>(true);
+  const { userInfo } = useUserLogin((state) => state);
 
   useEffect(() => {
     courseDetailGet(params.id as string).then((res) => {
@@ -37,7 +38,7 @@ export default function detail({}: Props) {
         <>
           <img src={detail?.poster} alt="" />
           <h2>{detail?.name}</h2>
-          {islogin ? (
+          {userInfo ? (
             <div dangerouslySetInnerHTML={{ __html: detail.desc }}></div>
           ) : (
             <p>{detail?.info}</p>

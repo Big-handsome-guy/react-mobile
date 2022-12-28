@@ -11,6 +11,8 @@ import { courseGet } from "@/api/course";
 import { CourseType } from "@/types/course";
 import BScroll from "@better-scroll/core";
 import MouseWheel from "@better-scroll/mouse-wheel";
+import { useUserLogin } from "@/store/user";
+import { Link } from "react-router-dom";
 BScroll.use(MouseWheel);
 
 type Props = {};
@@ -25,6 +27,7 @@ export default function Today({}: Props) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const gridData = ["专注闹钟", "呼吸训练", "睡眠助手", "解压木鱼"];
   const [opacity, setOpacity] = useState<number>(0);
+  const { userInfo } = useUserLogin((state) => state);
 
   useEffect(() => {
     bannerGet().then((res) => {
@@ -71,7 +74,16 @@ export default function Today({}: Props) {
           <div className="user">
             <div>
               <h1>加入NiceDay</h1>
-              <p>注册或登录账号</p>
+              <Link
+                to={"/login"}
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                <p>
+                  {userInfo
+                    ? `当前账号:${userInfo.username}`
+                    : "注册或登录账号"}
+                </p>
+              </Link>
             </div>
             <Avatar src="" />
           </div>
