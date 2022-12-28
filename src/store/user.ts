@@ -30,7 +30,7 @@ export const useUserLogin = create<UserState>()(
         console.log(res);
         setTimeout(() => {
           set({ isloading: false, userInfo: res.data });
-          navigate("/mine");
+          navigate(-1);
         }, 1000);
       },
       logOutFetch() {

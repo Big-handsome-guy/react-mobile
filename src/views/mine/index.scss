@@ -1,0 +1,29 @@
+.mine {
+  background: #f2f6ff url("../../assets/icon/ic_new_mine_top.webp") no-repeat;
+  background-size: 100% 30%;
+  height: 100vh;
+  .user {
+    display: flex;
+    padding: 50px 3rem;
+    align-items: center;
+    .avatar {
+      margin-right: 20px;
+    }
+    h1 {
+      font-size: 5rem;
+      color: #293a74;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  }
+  .list_box {
+    margin: 10px;
+    background-color: #fff;
+    padding: 0 10px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .logout {
+    margin: 50px 0;
+  }
+}

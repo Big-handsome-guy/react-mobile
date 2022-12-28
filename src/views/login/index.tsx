@@ -16,7 +16,9 @@ export default () => {
     password: "666666",
   };
 
-  const handleback = () => {};
+  const handleback = () => {
+    navigate(-1);
+  };
 
   return (
     <>
