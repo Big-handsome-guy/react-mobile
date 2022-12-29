@@ -69,9 +69,10 @@ export default function Mine({}: Props) {
       </div>
       <div className="list_box">
         <List>
-          {listArr.map((item) => {
+          {listArr.map((item, index) => {
             return (
               <List.Item
+                key={index}
                 prefix={
                   <Image
                     src={item.icon}

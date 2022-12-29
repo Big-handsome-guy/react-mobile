@@ -10,6 +10,8 @@ import Login from "./views/login";
 import Main from "./views/main";
 import Collect from "./views/collect";
 import Guard from "./guard";
+import AudioPlay from "./components/audio";
+import Bubble from "./components/bubble";
 
 function App() {
   return (
@@ -40,6 +42,8 @@ function App() {
         />
         <Route path="/zustand" element={<Test />} />
       </Routes>
+      <AudioPlay />
+      <Bubble />
     </div>
   );
 }
