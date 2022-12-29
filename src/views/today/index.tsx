@@ -85,7 +85,7 @@ export default function Today({}: Props) {
                 </p>
               </Link>
             </div>
-            <Avatar src="" />
+            <Avatar src={userInfo && userInfo.avatar ? userInfo.avatar : ""} />
           </div>
           <div className="search_box">
             <SearchBar placeholder="冥想课程、大自然音乐、睡眠助手等" />

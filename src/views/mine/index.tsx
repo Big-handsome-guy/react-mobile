@@ -7,6 +7,7 @@ import likes from "@/assets/icon/ic_mine_likes.png";
 import theme from "@/assets/icon/ic_mine_theme_select.png";
 import history from "@/assets/icon/ic_mine_history.png";
 import setting from "@/assets/icon/ic_mine_system_setting.png";
+import ImgUpload from "@/components/ImgUpload";
 
 type Props = {};
 
@@ -35,7 +36,7 @@ export default function Mine({}: Props) {
     <div className="mine">
       <div className="user">
         {/* <Avatar className="avatar" src="" /> */}
-        {/* <ImgUpload /> */}
+        <ImgUpload />
         <div>
           <h1>加入NiceDay</h1>
           <p>点击头像换图</p>

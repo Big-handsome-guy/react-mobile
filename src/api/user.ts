@@ -37,3 +37,22 @@ export const userCollectGet = (params: CollectSearchParams) => {
 export const userCollectDel = (collectid: string) => {
   return request.delete(`/classes/ReactCollect/${collectid}`);
 };
+
+export interface UserUpdateParams {
+  avatar: string;
+}
+//更新用户信息
+export const userUpdate = (
+  objectId: string,
+  token: string,
+  params: UserUpdateParams
+) => {
+  return request({
+    url: `/users/${objectId}`,
+    method: "PUT",
+    headers: {
+      "X-LC-Session": token,
+    },
+    data: params,
+  });
+};

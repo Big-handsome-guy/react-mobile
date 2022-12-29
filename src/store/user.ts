@@ -17,6 +17,7 @@ interface UserState {
   isloading: boolean;
   loginFetch: (params: UserParams, navigate: NavigateFunction) => void;
   logOutFetch: () => void;
+  userUpdateFetch: (info: UserInfoType) => void;
 }
 export const useUserLogin = create<UserState>()(
   persist(
@@ -37,6 +38,10 @@ export const useUserLogin = create<UserState>()(
         //退出登录
         set({ userInfo: null });
         useUserLogin.persist.clearStorage();
+      },
+      //更新用户信息
+      userUpdateFetch(info) {
+        set({ userInfo: info });
       },
     }),
     {
