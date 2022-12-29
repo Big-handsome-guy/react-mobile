@@ -8,6 +8,8 @@ import Detail from "./views/detail";
 import Test from "./views/test";
 import Login from "./views/login";
 import Main from "./views/main";
+import Collect from "./views/collect";
+import Guard from "./guard";
 
 function App() {
   return (
@@ -16,11 +18,26 @@ function App() {
         <Route path="/" element={<Main />}>
           <Route path="/" element={<Today />} />
           <Route path="/explore" element={<Explore />} />
-          <Route path="/mine" element={<Mine />} />
+          <Route
+            path="/mine"
+            element={
+              <Guard>
+                <Mine />
+              </Guard>
+            }
+          />
         </Route>
 
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/login" element={<Login />} />
+        <Route
+          path="/mine/collect"
+          element={
+            <Guard>
+              <Collect />
+            </Guard>
+          }
+        />
         <Route path="/zustand" element={<Test />} />
       </Routes>
     </div>
