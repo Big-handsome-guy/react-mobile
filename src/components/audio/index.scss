@@ -10,6 +10,11 @@
     padding: 30px;
     display: flex;
     justify-content: space-between;
+    .tag {
+      font-size: 2.6rem;
+      font-weight: bold;
+      background-color: #cdd4f3;
+    }
   }
   .play-btn {
     position: absolute;
@@ -28,23 +33,26 @@
       z-index: 7;
       transition: all 0.5s;
     }
-    .bofang_bg {
+    .icon-bofang {
       opacity: 0;
       z-index: 6;
     }
-    .zanting_bg {
+    .icon-zanting {
       opacity: 0;
       z-index: 6;
     }
     &.stop {
-      .zanting1_bg {
+      .icon-zanting1 {
         display: none;
+        font-size: 36px;
       }
-      .bofang_bg {
+      .icon-bofang {
+        font-size: 38px;
         opacity: 1;
         transform: translateX(-100%);
       }
-      .zanting_bg {
+      .icon-zanting {
+        font-size: 36px;
         opacity: 1;
         transform: translateX(100%);
       }
@@ -56,6 +64,9 @@
     left: 0;
     right: 0;
     z-index: 6;
+  }
+  .audio_box {
+    margin: 50px 45px;
   }
   .icon-cont {
     display: flex;

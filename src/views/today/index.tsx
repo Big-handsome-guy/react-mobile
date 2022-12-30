@@ -23,7 +23,9 @@ function getImageUrl(index: number) {
 }
 
 export default function Today({}: Props) {
-  const { popShow, updatePopShow } = usePlayerStore((state) => state);
+  const { popShow, updatePopShow, changePopData } = usePlayerStore(
+    (state) => state
+  );
   const [banner, setBanner] = useState<Array<BannerType>>([]);
   const [courseList, setCourseList] = useState<Array<CourseType>>([]);
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -103,6 +105,7 @@ export default function Today({}: Props) {
                 <SwiperSlide
                   key={index}
                   onClick={() => {
+                    changePopData(item);
                     updatePopShow(true);
                   }}
                 >
