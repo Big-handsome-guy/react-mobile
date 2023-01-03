@@ -1,5 +1,51 @@
 .adm-floating-bubble-button {
-  height: 30px;
-  width: 80px;
+  height: 40px;
+  width: 120px;
   border-radius: 30px;
+}
+
+.bubble_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+
+.bubble_box .icon-zanting2 {
+  display: none;
+}
+
+.bubble_box img {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+}
+
+.bubble_box .iconfont {
+  font-size: 24px;
+}
+
+.bubble_box.play .icon-zanting2 {
+  display: block;
+}
+
+.bubble_box.play .icon-icon-bofang {
+  display: none;
+}
+
+.bubble_box .poster {
+  animation: rote 6s infinite linear;
+}
+
+.bubble_box .poster.pause {
+  animation-play-state: paused;
+}
+
+@keyframes rote {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
 }

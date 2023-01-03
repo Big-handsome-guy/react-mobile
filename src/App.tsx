@@ -12,8 +12,10 @@ import Collect from "./views/collect";
 import Guard from "./guard";
 import AudioPlay from "./components/audio";
 import Bubble from "./components/bubble";
+import { usePlayerStore } from "./store/player";
 
 function App() {
+  const { bubbleShow } = usePlayerStore((state) => state);
   return (
     <div className="App">
       <Routes>
@@ -43,7 +45,7 @@ function App() {
         <Route path="/zustand" element={<Test />} />
       </Routes>
       <AudioPlay />
-      <Bubble />
+      {bubbleShow ? <Bubble /> : ""}
     </div>
   );
 }

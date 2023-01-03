@@ -35,28 +35,28 @@
   transition: all 0.5s;
 }
 
-.audio-play .play-btn .icon-bofang {
+.audio-play .play-btn .icon-icon-bofang {
   opacity: 0;
   z-index: 6;
 }
 
-.audio-play .play-btn .icon-zanting {
+.audio-play .play-btn .icon-ico_zanting_xuanzhong {
   opacity: 0;
   z-index: 6;
 }
 
-.audio-play .play-btn.stop .icon-zanting1 {
+.audio-play .play-btn.stop .icon-zanting2 {
   display: none;
   font-size: 36px;
 }
 
-.audio-play .play-btn.stop .icon-bofang {
+.audio-play .play-btn.stop .icon-icon-bofang {
   font-size: 38px;
   opacity: 1;
   transform: translateX(-100%);
 }
 
-.audio-play .play-btn.stop .icon-zanting {
+.audio-play .play-btn.stop .icon-ico_zanting_xuanzhong {
   font-size: 36px;
   opacity: 1;
   transform: translateX(100%);
@@ -68,10 +68,6 @@
   left: 0;
   right: 0;
   z-index: 6;
-}
-
-.audio-play .audio_box {
-  margin: 50px 45px;
 }
 
 .audio-play .icon-cont {
@@ -112,12 +108,12 @@
   border-radius: 50%;
 }
 
-.audio-play .time-cont {
+.audio-play .time_box {
   display: flex;
   justify-content: space-between;
   width: 90%;
   margin: auto;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .audio-play .circle {

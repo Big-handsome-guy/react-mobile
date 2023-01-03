@@ -33,25 +33,25 @@
       z-index: 7;
       transition: all 0.5s;
     }
-    .icon-bofang {
+    .icon-icon-bofang {
       opacity: 0;
       z-index: 6;
     }
-    .icon-zanting {
+    .icon-ico_zanting_xuanzhong {
       opacity: 0;
       z-index: 6;
     }
     &.stop {
-      .icon-zanting1 {
+      .icon-zanting2 {
         display: none;
         font-size: 36px;
       }
-      .icon-bofang {
+      .icon-icon-bofang {
         font-size: 38px;
         opacity: 1;
         transform: translateX(-100%);
       }
-      .icon-zanting {
+      .icon-ico_zanting_xuanzhong {
         font-size: 36px;
         opacity: 1;
         transform: translateX(100%);
@@ -64,9 +64,6 @@
     left: 0;
     right: 0;
     z-index: 6;
-  }
-  .audio_box {
-    margin: 50px 45px;
   }
   .icon-cont {
     display: flex;
@@ -101,12 +98,12 @@
     background-color: #333;
     border-radius: 50%;
   }
-  .time-cont {
+  .time_box {
     display: flex;
     justify-content: space-between;
     width: 90%;
     margin: auto;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
   }
   .circle {
     height: 100px;
